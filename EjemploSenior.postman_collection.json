@@ -1,0 +1,1653 @@
+{
+	"info": {
+		"_postman_id": "a43f0812-d9bd-409b-b810-e72c32eb8ec2",
+		"name": "EjemploSenior",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "GetMovementDateIdCustomer Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers/customer-transactions?dateStart=2023-05-22&dateEnd=2024-01-01&customer=26",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers",
+								"customer-transactions"
+							],
+							"query": [
+								{
+									"key": "dateStart",
+									"value": "2023-05-22"
+								},
+								{
+									"key": "dateEnd",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "customer",
+									"value": "26"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovementDateIdCustomer Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers/customer-transactions?dateStart=2023-05-22&dateEnd=2024-01-01&customer=26",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers",
+										"customer-transactions"
+									],
+									"query": [
+										{
+											"key": "dateStart",
+											"value": "2023-05-22"
+										},
+										{
+											"key": "dateEnd",
+											"value": "2024-01-01"
+										},
+										{
+											"key": "customer",
+											"value": "26"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "216"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customer\": {\n        \"name\": \"Juan Osorio\",\n        \"identification\": \"1720477347\",\n        \"CustomerAccount\": [\n            {\n                \"Account\": null,\n                \"movements\": [\n                    {\n                        \"id\": 20,\n                        \"date\": [\n                            2023,\n                            6,\n                            22\n                        ],\n                        \"type\": \"credito\",\n                        \"amount\": 150,\n                        \"balance\": 150,\n                        \"accountId\": \"10\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 23,\n        \"password\": \"1234\",\n        \"status\": \"true\",\n        \"name\": \"Jose Lema\",\n        \"gender\": \"Masculino\",\n        \"age\": 36,\n        \"identification\": \"1720477346\",\n        \"address\": \"Otavalo sn y principal\",\n        \"phone\": \"098254785\"\n    }\n]"
+						},
+						{
+							"name": "GetCustomer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 23,\n        \"password\": \"1234\",\n        \"status\": \"true\",\n        \"name\": \"Jose Lema\",\n        \"gender\": \"Masculino\",\n        \"age\": 30,\n        \"identification\": \"1720477346\",\n        \"address\": \"Otavalo sn y principal\",\n        \"phone\": \"098254785\"\n    },\n    {\n        \"id\": 25,\n        \"password\": \"5678\",\n        \"status\": \"true\",\n        \"name\": \"Marianela Montalvo\",\n        \"gender\": \"Femenino\",\n        \"age\": 36,\n        \"identification\": \"1720477347\",\n        \"address\": \"Amazonas y NNUU\",\n        \"phone\": \"097548965\"\n    },\n    {\n        \"id\": 26,\n        \"password\": \"1245\",\n        \"status\": \"true\",\n        \"name\": \"Juan Osorio\",\n        \"gender\": \"13 junio y Equinoccial\",\n        \"age\": 36,\n        \"identification\": \"1720477347\",\n        \"address\": \"Amazonas y NNUU\",\n        \"phone\": \"098874587\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetCustomerById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers/23",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers",
+								"23"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomer Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers/23",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers",
+										"23"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 23,\n    \"password\": \"1234\",\n    \"status\": \"true\",\n    \"name\": \"Jose Lema\",\n    \"gender\": \"Masculino\",\n    \"age\": 36,\n    \"identification\": \"1720477346\",\n    \"address\": \"Otavalo sn y principal\",\n    \"phone\": \"098254785\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PostCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aaaaa\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 36,\r\n    \"identification\": \"1720477346\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234-\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PostCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jose Lema\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 36,\r\n    \"identification\": \"1720477346\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 23,\n    \"password\": \"1234\",\n    \"status\": \"true\",\n    \"name\": \"Jose Lema\",\n    \"gender\": \"Masculino\",\n    \"age\": 36,\n    \"identification\": \"1720477346\",\n    \"address\": \"Otavalo sn y principal\",\n    \"phone\": \"098254785\"\n}"
+						},
+						{
+							"name": "PostCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Juan Osorio\",\r\n    \"gender\": \"13 junio y Equinoccial\",\r\n    \"age\": 36,\r\n    \"identification\": \"1720477347\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"phone\": \"098874587\",\r\n    \"password\": \"1245\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 26,\n    \"password\": \"1245\",\n    \"status\": \"true\",\n    \"name\": \"Juan Osorio\",\n    \"gender\": \"13 junio y Equinoccial\",\n    \"age\": 36,\n    \"identification\": \"1720477347\",\n    \"address\": \"Amazonas y NNUU\",\n    \"phone\": \"098874587\"\n}"
+						},
+						{
+							"name": "PostCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"aaaaa\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 36,\r\n    \"identification\": \"1720477346\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234-\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Error: The input has values out of range or code injection\",\n    \"message\": \"Validation failure\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PutCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1245\",\r\n    \"status\": \"true\",\r\n    \"name\": \"Juan Osorio\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 36,\r\n    \"identification\": \"1720477347\",\r\n    \"address\": \"13 junio y Equinoccial\",\r\n    \"phone\": \"098874587\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers/23",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers",
+								"23"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PutCustomer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jose Lema\",\r\n    \"gender\": \"Masculino\",\r\n    \"age\": 30,\r\n    \"identification\": \"1720477346\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers/26",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers",
+										"26"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 23,\n    \"password\": \"1234\",\n    \"status\": \"true\",\n    \"name\": \"Jose Lema\",\n    \"gender\": \"Masculino\",\n    \"age\": 30,\n    \"identification\": \"1720477346\",\n    \"address\": \"Otavalo sn y principal\",\n    \"phone\": \"098254785\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers/24",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers",
+								"24"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteCustomer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers/24",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers",
+										"24"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ClientesTransactions",
+			"item": [
+				{
+					"name": "GetCustomer Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+							"host": [
+								"{{dominioCustomers}}"
+							],
+							"path": [
+								"business",
+								"celula",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCustomer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 23,\n        \"password\": \"1234\",\n        \"status\": \"true\",\n        \"name\": \"Jose Lema\",\n        \"gender\": \"Masculino\",\n        \"age\": 36,\n        \"identification\": \"1720477346\",\n        \"address\": \"Otavalo sn y principal\",\n        \"phone\": \"098254785\"\n    }\n]"
+						},
+						{
+							"name": "GetCustomer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioCustomers}}/business/celula/v1/customers",
+									"host": [
+										"{{dominioCustomers}}"
+									],
+									"path": [
+										"business",
+										"celula",
+										"v1",
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 23,\n        \"password\": \"1234\",\n        \"status\": \"true\",\n        \"name\": \"Jose Lema\",\n        \"gender\": \"Masculino\",\n        \"age\": 30,\n        \"identification\": \"1720477346\",\n        \"address\": \"Otavalo sn y principal\",\n        \"phone\": \"098254785\"\n    },\n    {\n        \"id\": 25,\n        \"password\": \"5678\",\n        \"status\": \"true\",\n        \"name\": \"Marianela Montalvo\",\n        \"gender\": \"Femenino\",\n        \"age\": 36,\n        \"identification\": \"1720477347\",\n        \"address\": \"Amazonas y NNUU\",\n        \"phone\": \"097548965\"\n    },\n    {\n        \"id\": 26,\n        \"password\": \"1245\",\n        \"status\": \"true\",\n        \"name\": \"Juan Osorio\",\n        \"gender\": \"13 junio y Equinoccial\",\n        \"age\": 36,\n        \"identification\": \"1720477347\",\n        \"address\": \"Amazonas y NNUU\",\n        \"phone\": \"098874587\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "GetAccounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-account/celula/v1/account",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-account",
+								"celula",
+								"v1",
+								"account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetAccounts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"number\": \"12377\",\n        \"type\": \"CORRIENTE\",\n        \"initialBalance\": 1000,\n        \"status\": \"true\",\n        \"customerId\": \"23\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetAccountsById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1450/business-account/celula/v1/account/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1450",
+							"path": [
+								"business-account",
+								"celula",
+								"v1",
+								"account",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"585545\",\r\n    \"type\": \"CORRIENTE\",\r\n    \"initialBalance\": 1000,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-account/celula/v1/account",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-account",
+								"celula",
+								"v1",
+								"account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PostAccount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"12377\",\r\n    \"type\": \"CORRIENTE\",\r\n    \"initialBalance\": 1000.00,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "PostAccount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"225487\",\r\n    \"type\": \"CORRIENTE\",\r\n    \"initialBalance\": 1000.00,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "PostAccount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"495878\",\r\n    \"type\": \"CORRIENTE\",\r\n    \"initialBalance\": 0,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"26\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "PostAccount",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"496825\",\r\n    \"type\": \"AHORROS\",\r\n    \"initialBalance\": 540.00,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"25\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "PutAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"number\": \"495878\",\r\n    \"type\": \"AHORROS\",\r\n    \"initialBalance\": 0.0000,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-account/celula/v1/account/10",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-account",
+								"celula",
+								"v1",
+								"account",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PutAccount",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"number\": \"478758\",\r\n    \"type\": \"AHORROS\",\r\n    \"initialBalance\": 2000,\r\n    \"status\": \"true\",\r\n    \"customerId\": \"23\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"number\": \"478758\",\n    \"type\": \"AHORROS\",\n    \"initialBalance\": 2000,\n    \"status\": \"true\",\n    \"customerId\": \"23\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-account/celula/v1/account/12",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-account",
+								"celula",
+								"v1",
+								"account",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteAccount",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1449/business-account/celula/v1/account/123778",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1449",
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"account",
+										"123778"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "GetMovementDateIdCustomer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-transactions",
+								"celula",
+								"v1",
+								"movement"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovementDateIdCustomer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioTransactions}}/business-account/celula/v1/accountCustomer?dateStart=2023-05-22&dateEnd=2024-01-01&account=26",
+									"host": [
+										"{{dominioTransactions}}"
+									],
+									"path": [
+										"business-account",
+										"celula",
+										"v1",
+										"accountCustomer"
+									],
+									"query": [
+										{
+											"key": "dateStart",
+											"value": "2023-05-22"
+										},
+										{
+											"key": "dateEnd",
+											"value": "2024-01-01"
+										},
+										{
+											"key": "account",
+											"value": "26"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Account\": {\n            \"id\": 10,\n            \"number\": \"495878\",\n            \"type\": \"AHORROS\",\n            \"initialBalance\": 150,\n            \"status\": \"true\",\n            \"customerId\": \"26\"\n        },\n        \"movements\": [\n            {\n                \"id\": 20,\n                \"date\": \"2023-06-22\",\n                \"type\": \"credito\",\n                \"amount\": 150,\n                \"balance\": 150,\n                \"accountId\": \"10\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetMovement",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-transactions",
+								"celula",
+								"v1",
+								"movement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovementDateIdAccount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movementDate?dateStart=2023-05-22&dateEnd=2024-01-01&account=10",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-transactions",
+								"celula",
+								"v1",
+								"movementDate"
+							],
+							"query": [
+								{
+									"key": "dateStart",
+									"value": "2023-05-22"
+								},
+								{
+									"key": "dateEnd",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "account",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetMovementDateIdAccount",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movementDate?dateStart=2023-05-22&dateEnd=2024-01-01&account=10",
+									"host": [
+										"{{dominioTransactions}}"
+									],
+									"path": [
+										"business-transactions",
+										"celula",
+										"v1",
+										"movementDate"
+									],
+									"query": [
+										{
+											"key": "dateStart",
+											"value": "2023-05-22"
+										},
+										{
+											"key": "dateEnd",
+											"value": "2024-01-01"
+										},
+										{
+											"key": "account",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 17,\n        \"date\": \"2023-06-22\",\n        \"type\": \"debito\",\n        \"amount\": -575,\n        \"balance\": 1425,\n        \"accountId\": \"5\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GetMovementById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement/1",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-transactions",
+								"celula",
+								"v1",
+								"movement",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023-06-22\",\r\n    \"type\": \"debito\",\r\n    \"amount\": -10540,\r\n    \"accountId\": \"11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+							"host": [
+								"{{dominioTransactions}}"
+							],
+							"path": [
+								"business-transactions",
+								"celula",
+								"v1",
+								"movement"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PostMovement",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2023-06-22\",\r\n    \"type\": \"credito\",\r\n    \"amount\": -575,\r\n    \"accountId\": \"5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+									"host": [
+										"{{dominioTransactions}}"
+									],
+									"path": [
+										"business-transactions",
+										"celula",
+										"v1",
+										"movement"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "101"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 17,\n    \"date\": \"2023-06-22\",\n    \"type\": \"credito\",\n    \"amount\": -575,\n    \"balance\": 1425,\n    \"accountId\": \"5\"\n}"
+						},
+						{
+							"name": "PostMovement",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2023-06-22\",\r\n    \"type\": \"debito\",\r\n    \"amount\": -540,\r\n    \"accountId\": \"11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+									"host": [
+										"{{dominioTransactions}}"
+									],
+									"path": [
+										"business-transactions",
+										"celula",
+										"v1",
+										"movement"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 21,\n    \"date\": \"2023-06-22\",\n    \"type\": \"debito\",\n    \"amount\": -540,\n    \"balance\": 0,\n    \"accountId\": \"11\"\n}"
+						},
+						{
+							"name": "PostMovement",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2023-06-22\",\r\n    \"type\": \"debito\",\r\n    \"amount\": -10540,\r\n    \"accountId\": \"11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{dominioTransactions}}/business-transactions/celula/v1/movement",
+									"host": [
+										"{{dominioTransactions}}"
+									],
+									"path": [
+										"business-transactions",
+										"celula",
+										"v1",
+										"movement"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Error: The server has an unexpected error\",\n    \"message\": \"The transaction amount exceeds the available balance\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "dominioCustomers",
+			"value": "http://localhost:1451",
+			"type": "default"
+		},
+		{
+			"key": "dominioTransactions",
+			"value": "http://localhost:1450",
+			"type": "default"
+		}
+	]
+}

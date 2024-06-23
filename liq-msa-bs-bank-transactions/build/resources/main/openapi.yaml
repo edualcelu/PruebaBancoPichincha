@@ -1,0 +1,403 @@
+openapi: 3.0.0
+info:
+  title: MSA Business - Seniority - Banking Transactions V1
+  description: |
+    Make the monetary and accounting transactions that arise from the crediting of the purchase balance. <br>
+    <br>
+    <b>• Business Area:</b> `Operation and Execution`
+    <br>
+    <b>• Business Domain:</b> `Cross Product Operations`
+    <br>
+    <b>• Service Domain:</b> `Payment Order` <br><br>
+    <b> Bitácora de Cambios del template </b> <br>
+    - Domain version 1.1.0
+      - OpenApi. Descripcion Error <br> 
+
+  contact:
+    name: Tribu - Celula - Eduardo Araujo
+    email: earaujoe@pichincha.com
+  version: 1.0.0
+externalDocs:
+  description: API Banking Transactions
+  url: https://pichincha.atlassian.net/wiki/spaces/GDA/pages/2847997979/Definiciones+de+Dise+o
+servers:
+  - url: https://desarrollo-liquidezplus.pichincha.com
+    description: |
+      Development environment.
+  - url: https://pruebas-liquidezplus.pichincha.com
+    description: |
+      Test environment.
+  - url: https://liquidezplus.pichincha.com
+    description: |
+      Production environment.
+tags:
+  - name: Cuentas
+    description: Endpoints para gestionar cuentas bancarias
+  - name: Movimientos
+    description: Endpoints para gestionar movimientos bancarios
+paths:
+
+
+  /business-account/celula/v1/account:
+    get:
+      summary: Obtener todas las cuentas
+      operationId: getAccount
+
+
+      responses:
+        '200':
+          description: Lista de cuentas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+    post:
+      summary: Crear una nueva cuenta
+      operationId: postAccount
+
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+      responses:
+        '201':
+          description: Cuenta creada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          description: Solicitud incorrecta
+
+  /business-account/celula/v1/account/{accountNumber}:
+    get:
+      summary: Obtener una cuenta por número de cuenta
+      operationId: getAccountNumber
+
+
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cuenta encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '404':
+          description: Cuenta no encontrada
+
+    put:
+      summary: Actualizar una cuenta existente
+      operationId: putAccount
+
+
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+      responses:
+        '200':
+          description: Cuenta actualizada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          description: Solicitud incorrecta
+        '404':
+          description: Cuenta no encontrada
+
+    delete:
+      summary: Eliminar una cuenta
+      operationId: DeleteAccount
+
+
+      parameters:
+        - in: path
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Cuenta eliminada correctamente
+        '404':
+          description: Cuenta no encontrada
+
+  /business-transactions/celula/v1/movement:
+    get:
+      summary: Obtener todos los movimientos
+      operationId: getMovement
+
+
+      responses:
+        '200':
+          description: Lista de movimientos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movement'
+    post:
+      summary: Crear un nuevo movimiento
+      operationId: postMovement
+
+
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Movement'
+      responses:
+        '201':
+          description: Movimiento creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movement'
+        '400':
+          description: Solicitud incorrecta
+
+  /business-transactions/celula/v1/movement/{id}:
+    get:
+      summary: Obtener un movimiento por ID
+      operationId: getMovementById
+
+
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Movimiento encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movement'
+        '404':
+          description: Movimiento no encontrado
+
+    put:
+      summary: Actualizar un movimiento existente
+      operationId: putMovement
+
+
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Movement'
+      responses:
+        '200':
+          description: Movimiento actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movement'
+        '400':
+          description: Solicitud incorrecta
+        '404':
+          description: Movimiento no encontrado
+
+    delete:
+      summary: Eliminar un movimiento
+      operationId: deleteMovement
+
+
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Movimiento eliminado correctamente
+        '404':
+          description: Movimiento no encontrado
+  /business-transactions/celula/v1/movementDate:
+    get:
+      summary: Obtener informe detallado de cliente y cuentas bancarias con movimientos
+      description: |
+        Obtiene un informe detallado de un cliente, incluyendo detalles de cada cuenta bancaria y sus movimientos.
+      operationId: CustomerTransactions
+      parameters:
+        - in: query
+          name: dateStart
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha inicio para filtrar movimientos
+        - in: query
+          name: dateEnd
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha Fin para filtrar movimientos
+        - in: query
+          name: account
+          schema:
+            type: string
+          required: true
+          description: Nombre de usuario para filtrar movimientos.
+      responses:
+        '200':
+          description: Informe detallado de cliente obtenido correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movement'
+
+  /business-account/celula/v1/accountCustomer:
+    get:
+      summary: Obtener una cuenta por número de cuenta
+      operationId: getAccountCustomer
+      parameters:
+        - in: query
+          name: dateStart
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha inicio para filtrar movimientos
+        - in: query
+          name: dateEnd
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha Fin para filtrar movimientos
+        - in: query
+          name: account
+          schema:
+            type: string
+          required: true
+          description: Nombre de usuario para filtrar movimientos.
+      responses:
+        '200':
+          description: Cuenta encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerAccount'
+        '404':
+          description: Cuenta no encontrada
+
+
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        id:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: integer
+        number:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+          description: Número de cuenta único (PK)
+        type:
+            type: string
+        initialBalance:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        status:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+        customerId:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+
+      required:
+        - number
+        - type
+        - initialBalance
+        - status
+        - customerId
+
+    Movement:
+      type: object
+      properties:
+        id:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: integer
+          description: ID único del movimiento (PK)
+        date:
+          type: string
+          format: date
+        type:
+          type: string
+          enum: [debito, credito]
+        amount:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        balance:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        accountId:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+      required:
+        - date
+        - type
+        - amount
+        - accountId
+
+
+    CustomerAccount:
+      type: array
+      items:
+        type: object
+        properties:
+          Account:
+            $ref: '#/components/schemas/Account'
+          movements:
+            type: array
+            items:
+              $ref: '#/components/schemas/Movement'
+
+
+

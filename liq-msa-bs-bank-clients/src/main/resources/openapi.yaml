@@ -1,0 +1,300 @@
+openapi: 3.0.0
+info:
+  title: MSA Business - Seniority - Banking Customers V1
+  description: |
+    Make the monetary and accounting transactions that arise from the crediting of the purchase balance. <br>
+    <br>
+    <b>• Business Area:</b> `Operation and Execution`
+    <br>
+    <b>• Business Domain:</b> `Cross Product Operations`
+    <br>
+    <b>• Service Domain:</b> `Payment Order` <br><br>
+    <b> Bitácora de Cambios del template </b> <br>
+    - Domain version 1.1.0
+      - OpenApi. Descripcion Error <br> 
+
+  contact:
+    name: Tribu - Celula - Eduardo Araujo
+    email: earaujoe@pichincha.com
+  version: 1.0.0
+externalDocs:
+  description: API Banking Customers
+  url: https://pichincha.atlassian.net/wiki/spaces/GDA/pages/2847997979/Definiciones+de+Dise+o
+servers:
+  - url: https://desarrollo-celula.pichincha.com
+    description: |
+      Development environment.
+  - url: https://pruebas-celula.pichincha.com
+    description: |
+      Test environment.
+  - url: https://celula.pichincha.com
+    description: |
+      Production environment.
+tags:
+  - name: Api de gestion de clientes
+    description: Api de gestion de clientes
+
+paths:
+  /business/celula/v1/customers:
+    get:
+      summary: Obtener lista de clientes
+      operationId: GetCustomer
+      responses:
+        '200':
+          description: Lista de clientes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+    post:
+      summary: Crear un nuevo cliente
+      operationId: PostCustomer
+      requestBody:
+        description: Datos del nuevo cliente
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          description: Cliente creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+  /business/celula/v1/customers/{id}:
+    get:
+      summary: Obtener un cliente por ID
+      operationId: GetCustomerId
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Datos del cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '404':
+          description: Client no encontrado
+    put:
+      summary: Actualizar un cliente por ID
+      operationId: PutCustomer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados del cliente
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          description: Cliente actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '404':
+          description: Cliente no encontrado
+    delete:
+      summary: Eliminar un cliente por ID
+      operationId: DeleteCustomer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Cliente eliminado exitosamente
+        '404':
+          description: Cliente no encontrado
+  /business/celula/v1/customers/customer-transactions:
+    get:
+      summary: Obtener informe detallado de cliente y cuentas bancarias con movimientos
+      description: |
+        Obtiene un informe detallado de un cliente, incluyendo detalles de cada cuenta bancaria y sus movimientos.
+      operationId: CustomerTransactions
+      parameters:
+        - in: query
+          name: dateStart
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha inicio para filtrar movimientos
+        - in: query
+          name: dateEnd
+          schema:
+            type: string
+            format: date
+          required: true
+          description: Fecha Fin para filtrar movimientos
+        - in: query
+          name: customer
+          schema:
+            type: string
+          required: true
+          description: Nombre de usuario para filtrar movimientos.
+      responses:
+        '200':
+          description: Informe detallado de cliente obtenido correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerTransactions'
+
+components:
+  schemas:
+    Person:
+      type: object
+      required:
+        - id
+        - name
+        - gender
+        - age
+        - identification
+        - address
+        - phone
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        gender:
+          type: string
+        age:
+          type: integer
+        identification:
+          type: string
+        address:
+          type: string
+        phone:
+          type: string
+
+    Customer:
+      allOf:
+        - $ref: '#/components/schemas/Person'
+      type: object
+      properties:
+        id:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: integer
+        password:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+        status:
+
+          maxLength: 100
+          type: string
+
+      required:
+        - password
+        - status
+
+    CustomerTransactions:
+      type: object
+      properties:
+        customer:
+          type: object
+          properties:
+            name:
+              type: string
+              pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+              maxLength: 100
+              example: "Marianela Montalvo"
+              description: Nombre del cliente
+            identification:
+              type: string
+              pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+              maxLength: 100
+              example: "1720477346"
+              description: Identificación del cliente
+            CustomerAccount:
+              type: array
+              items:
+                type: object
+                properties:
+                  Account:
+                    $ref: '#/components/schemas/Account'
+                  movements:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Movement'
+
+    Account:
+      type: object
+      properties:
+        id:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: integer
+        number:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+          description: Número de cuenta único (PK)
+        type:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+        initialBalance:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        status:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+        customerId:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+
+    Movement:
+      type: object
+      properties:
+        id:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: integer
+          description: ID único del movimiento (PK)
+        date:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+          format: date
+        type:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string
+          enum: [ debito, credito ]
+        amount:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        balance:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: number
+        accountId:
+          pattern: "^[^'\";|?&=<>\\(\\)%{}\\[\\]\\\\/:\\-+#\\$]*$"
+          maxLength: 100
+          type: string

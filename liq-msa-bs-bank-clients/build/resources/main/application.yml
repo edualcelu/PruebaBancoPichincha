@@ -1,0 +1,28 @@
+server:
+  port: 1451
+
+logging:
+  level:
+    org.springframework.data.r2dbc: DEBUG
+
+spring:
+  application:
+    name: liq-msa-bs-bank-clients
+  header:
+    channel: digital
+    medium: web
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations:
+      "classpath:db/migration"
+    sql-migration-suffixes:
+      ".sql"
+    sql-migration-prefix:
+      V
+    sql-migration-separator:
+      "__"
+  r2dbc:
+    url: r2dbc:pool:mssql://localhost:1433/Prueba
+    username: sa
+    password: 1234

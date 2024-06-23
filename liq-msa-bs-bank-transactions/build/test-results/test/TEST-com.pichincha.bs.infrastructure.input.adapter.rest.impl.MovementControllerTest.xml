@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.pichincha.bs.infrastructure.input.adapter.rest.impl.MovementControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-23T20:24:25" hostname="DESKTOP-1PTBDBE" time="8.139">
+  <properties/>
+  <testcase name="testPostMovement()" classname="com.pichincha.bs.infrastructure.input.adapter.rest.impl.MovementControllerTest" time="8.139"/>
+  <system-out><![CDATA[15:24:02.668 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.pichincha.bs.infrastructure.input.adapter.rest.impl.MovementControllerTest]: MovementControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:24:03.643 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.pichincha.bs.OptimusMainApplication for test class com.pichincha.bs.infrastructure.input.adapter.rest.impl.MovementControllerTest
+ ??????? ??????? ????????????????   ???????   ???????????
+?????????????????????????????????? ????????   ???????????
+???   ???????????   ???   ?????????????????   ???????????
+???   ??????????    ???   ?????????????????   ???????????
+????????????        ???   ?????? ??? ????????????????????
+ ??????? ???        ???   ??????     ??? ??????? ????????
+
+:: Optimus Spring Adapter :: Running Spring Boot::
+:: Micro-Service liq-msa-bs-bank-transactions::
+:: Pichincha Cloud Native Platform ::
+
+2024-06-23T15:24:07.188-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] c.p.b.i.i.a.r.i.MovementControllerTest   : Starting MovementControllerTest using Java 17.0.9 with PID 12588 (started by Eduardo in C:\Users\Eduardo\Documents\EjercicioSenior2024\EjercicioV2\liq-msa-bs-bank-transactions)
+2024-06-23T15:24:07.206-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] c.p.b.i.i.a.r.i.MovementControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2024-06-23T15:24:12.414-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-23T15:24:12.430-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-06-23T15:24:13.414-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 953 ms. Found 2 R2DBC repository interfaces.
+2024-06-23T15:24:23.115-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-06-23T15:24:25.286-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 61480
+2024-06-23T15:24:25.326-05:00  INFO 12588 --- [liq-msa-bs-bank-transactions] [    Test worker] c.p.b.i.i.a.r.i.MovementControllerTest   : Started MovementControllerTest in 20.522 seconds (process running for 27.99)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
